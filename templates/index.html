@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Convite Tardezinha</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="convite">
+        <h1>Tardezinha da Anne</h1>
+        <p class="info">📅 13/09/2025 &nbsp;&nbsp; 🕓 15h &nbsp;&nbsp; 📍 Rua piraquara Nº1209</p>
+
+        <div class="contador">
+            Confirmados até agora: <span>{{ total_confirmados }}</span>
+        </div>
+
+        <form action="/confirmar" method="post">
+            <input type="text" name="nome" placeholder="Digite seu nome" required>
+            <button type="submit">Confirmar Presença</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!-- templates/confirmados.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="convite">
+        <h1>🎉 Confirmados 🎉</h1>
+        <p class="contador">Total de confirmados: {{ total }}</p>
+        <ul class="lista">
+            {% for nome in nomes %}
+                <li>{{ nome }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="voltar">Voltar ao convite</a>
+    </div>
+</body>
+</html>
