@@ -1,21 +1,55 @@
-<!-- templates/confirmados.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Confirmados</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        ul.lista {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.lista li {
+            margin-bottom: 10px;
+        }
+
+        .btn-excluir {
+            margin-left: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            cursor: pointer;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .btn-excluir:hover {
+            background-color: darkred;
+        }
+
+        .voltar {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <div class="convite">
-        <h1>🎉 Confirmados 🎉</h1>
+        <h1>Lista de Confirmados</h1>
         <p class="contador">Total de confirmados: {{ total }}</p>
         <ul class="lista">
-            {% for nome in nomes %}
-                <li>{{ nome }}</li>
+            {% for nome in lista %}
+            <li>
+                {{ nome }}
+                <a href="{{ url_for('excluir', nome=nome) }}" class="btn-excluir">Excluir</a>
+            </li>
             {% endfor %}
         </ul>
-        <a href="/" class="voltar">Voltar ao convite</a>
+        <a href="{{ url_for('index') }}" class="voltar">Voltar</a>
     </div>
 </body>
 </html>
