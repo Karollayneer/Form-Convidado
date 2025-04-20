@@ -8,6 +8,8 @@
 <body>
     <div class="convite">
         <h2>Confirmados</h2>
+        <p>Total de confirmados: <strong>{{ total }}</strong></p>
+        
         <ul>
             {% for nome in nomes %}
                 <li>
@@ -18,6 +20,7 @@
                 </li>
             {% endfor %}
         </ul>
+
         <br>
         <a href="{{ url_for('logout') }}">Sair</a>
     </div>

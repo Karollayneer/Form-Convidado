@@ -32,7 +32,8 @@ def login():
 def lista_confirmados():
     if not session.get('logado'):
         return redirect(url_for('login'))
-    return render_template('confirmados.html', nomes=confirmados)
+    return render_template('confirmados.html', nomes=confirmados, total=len(confirmados))
+
 
 @app.route('/excluir/<int:index>', methods=['POST'])
 def excluir(index):
