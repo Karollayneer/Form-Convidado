@@ -52,3 +52,7 @@ button {
     margin-left: 10px;
     cursor: pointer;
 }
+.info{
+    font-size: 14px;
+    width:110%;
+}
