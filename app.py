@@ -34,7 +34,7 @@ def confirmar():
     if nome:
         confirmados.append(nome)
         salvar_confirmados(confirmados)
-        session['messagem_confirmacao'] = f"Presença confirmada, {nome}! 🎉"
+        session['mensagem_confirmacao'] = f"Presença confirmada, {nome}! 🎉"
     return redirect(url_for('index'))
 
 @app.route('/login', methods=['GET', 'POST'])
